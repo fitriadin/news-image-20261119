@@ -17,9 +17,10 @@ import { fileURLToPath } from "node:url";
 
 const repoDir = dirname(fileURLToPath(import.meta.url));
 const outputDir = process.env.MAKEFUN_OUTPUT_DIR ?? "/output";
+const ENTRY_FILE = "entry.png";
 
 mkdirSync(outputDir, { recursive: true });
 writeFileSync(
-  join(outputDir, "entry.png"),
-  readFileSync(join(repoDir, "entry.png")),
+  join(outputDir, ENTRY_FILE),
+  readFileSync(join(repoDir, ENTRY_FILE)),
 );
